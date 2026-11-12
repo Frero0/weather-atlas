@@ -1,1 +1,43 @@
-{"name":"meteo-pwa-federico-santorsola","version":"1.0.0","private":true,"author":"Federico Santorsola","description":"App meteo installabile in italiano con ultima località consultabile offline.","scripts":{"start":"node server.cjs","build":"node build.cjs"},"dependencies":{"react":"18.2.0","react-dom":"18.2.0"},"devDependencies":{"esbuild":"0.27.1"}}
+{
+  "name": "weather-atlas",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.1"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3018",
+    "start": "vite --host 0.0.0.0 --port 3018",
+    "preview": "vite preview --host 0.0.0.0 --port 3018",
+    "preview:local": "vite preview --host 0.0.0.0 --port 3018",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "build": "tsc --noEmit && vite build",
+    "test": "node scripts/test.mjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "lucide-react": "^0.468.0",
+    "recharts": "^3.4.1"
+  },
+  "devDependencies": {
+    "vite": "^8.3.8",
+    "@vitejs/plugin-react": "^6.3.0",
+    "typescript": "^5.9.3",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@types/node": "^22.0.0",
+    "vitest": "^5.1.0",
+    "eslint": "^10.14.0",
+    "@eslint/js": "^10.0.1",
+    "typescript-eslint": "^8.72.2",
+    "globals": "^17.0.0",
+    "playwright": "^1.58.0",
+    "prettier": "^3.10.1"
+  },
+  "overrides": {
+    "minimatch": "^11.0.1"
+  }
+}
