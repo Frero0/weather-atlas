@@ -1,0 +1,5 @@
+const http=require('http');const fs=require('fs');const path=require('path');
+const routes={'/':['index.html','text/html; charset=utf-8'],'/index.html':['index.html','text/html; charset=utf-8'],'/app.js':['app.js','text/javascript; charset=utf-8'],'/app.css':['app.css','text/css; charset=utf-8'],'/offline.html':['offline.html','text/html; charset=utf-8'],'/manifest.json':['manifest.json','application/manifest+json'],'/serviceworker.js':['serviceworker.js','text/javascript; charset=utf-8'],'/images/bg.jpg':['images/bg.jpg','image/jpeg'],'/images/logo.png':['images/logo.png','image/png']};
+const server=http.createServer((req,res)=>{const file=routes[new URL(req.url,'http://localhost').pathname];if(!file||req.method!=='GET'){res.writeHead(404);res.end('Pagina non trovata');return;}fs.readFile(path.join(__dirname,'dist',file[0]),(err,data)=>{res.writeHead(err?500:200,{'Content-Type':file[1],'Cache-Control':'no-store'});res.end(err?'Impossibile caricare la pagina':data);});});
+if(require.main===module){const port=Number(process.env.PORT||3016);server.listen(port,'127.0.0.1',()=>console.log(`Meteo PWA: http://localhost:${port}`));}
+module.exports=server;

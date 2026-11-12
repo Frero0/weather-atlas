@@ -1,0 +1,1 @@
+{"name":"meteo-pwa-federico-santorsola","version":"1.0.0","private":true,"author":"Federico Santorsola","description":"App meteo installabile in italiano con ultima località consultabile offline.","scripts":{"start":"node server.cjs","build":"node build.cjs"},"dependencies":{"react":"18.2.0","react-dom":"18.2.0"},"devDependencies":{"esbuild":"0.27.1"}}

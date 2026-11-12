@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+*.zip
+*.log
+.env*
+!.env.example
+.idea/
+.vscode/
+.DS_Store
+*.key
+*.pem
+test-results/
+playwright-report/
